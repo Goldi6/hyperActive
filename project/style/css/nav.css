@@ -1,0 +1,201 @@
+nav .nav-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hamburger-icon {
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 0.75rem;
+}
+@media screen and (max-width: 925px) {
+  .hamburger-icon {
+    display: flex !important;
+  }
+}
+.hamburger-icon .hamburger-btn {
+  height: 2rem !important;
+  width: 2.5rem;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between !important;
+  border-radius: 50%;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  transition: transform 0.1s;
+  position: relative;
+}
+.hamburger-icon .hamburger-btn div:first-of-type {
+  top: 0;
+  transition: transform 0.3s ease-in;
+}
+.hamburger-icon .hamburger-btn div:last-of-type {
+  bottom: 0;
+  transition: transform 0.3s ease-in;
+}
+.hamburger-icon .hamburger-btn div:nth-of-type(2) {
+  top: 44%;
+  transition: opacity 0.3s linear, transform 0.3s;
+}
+.hamburger-icon .hamburger-btn div {
+  position: absolute;
+  height: 5px;
+  border-radius: 3px;
+  width: 100%;
+}
+.hamburger-icon .hamburger-btn input {
+  display: none;
+}
+
+.mobile-nav:has(input:checked) + .nav-links-container {
+  max-height: 1000px;
+}
+
+.hamburger-btn input:checked ~ div:nth-of-type(2) {
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+.hamburger-btn input:checked ~ div:nth-of-type(1) {
+  transform: rotate(45deg) translate(50%, -30%);
+}
+
+.hamburger-btn input:checked ~ div:nth-of-type(3) {
+  transform: rotate(-45deg) translate(50%);
+}
+
+nav {
+  z-index: 50;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  width: 100%;
+}
+nav .hamburger-icon {
+  display: none;
+}
+nav .nav-container {
+  display: flex;
+  margin: auto;
+  width: fit-content;
+}
+nav .nav-link#home-link {
+  display: none;
+  order: -1;
+}
+@media screen and (max-width: 925px) {
+  nav {
+    position: static;
+  }
+  nav .mobile-nav {
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  nav .mobile-nav .logo-container {
+    margin-right: 0;
+  }
+  nav .mobile-nav .logo-container img {
+    height: 4rem;
+  }
+  nav .mobile-nav .hamburger-icon {
+    display: block;
+  }
+  nav .inner-nav {
+    position: static !important;
+    padding-right: 1rem;
+    padding-bottom: 2rem !important;
+  }
+  nav .inner-nav a {
+    border-bottom: 1px dashed #aad6be;
+    padding: 0.5rem;
+  }
+  nav .nav-container {
+    flex-direction: column;
+  }
+  nav .nav-links-container {
+    overflow: hidden;
+    max-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    width: 100%;
+  }
+  nav .nav-links-container .nav-link {
+    border-left: none !important;
+    padding: 1rem !important;
+  }
+  nav .nav-links-container .nav-link#home-link {
+    display: block;
+  }
+}
+nav .inner-nav {
+  display: none;
+  height: fit-content;
+  width: 100%;
+  position: absolute;
+  margin-top: 1rem;
+  top: 2rem;
+  flex-direction: column;
+  right: 0;
+  gap: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+}
+@media screen and (min-width: 925px) {
+  nav .nav-link:hover {
+    font-weight: bold;
+  }
+  nav .nav-link:hover a {
+    color: #213b7f;
+  }
+  nav .inner-nav:hover {
+    display: flex;
+  }
+  nav .nav-link:first-of-type:hover + .inner-nav {
+    display: flex;
+  }
+  nav .inner-nav a {
+    width: fit-content;
+  }
+  nav .inner-nav a:hover {
+    color: #213a7f;
+    background-color: white;
+  }
+}
+nav .nav-link:first-of-type:has(input:checked) + .inner-nav {
+  display: flex;
+}
+nav .nav-links-container {
+  position: relative;
+  flex-wrap: nowrap;
+}
+nav .nav-links-container .nav-link {
+  padding: 0.25rem 0.5rem;
+  border-left: 2px solid black;
+  white-space: nowrap;
+}
+nav .nav-links-container .nav-link:last-of-type {
+  border-left: none;
+  padding-left: 0;
+}
+nav .nav-links-container .nav-link:first-of-type input {
+  display: none;
+}
+nav .nav-links-container .nav-link:first-of-type img {
+  height: 0.6rem;
+}
+nav .logo-container {
+  margin-right: -1.3rem;
+  position: relative;
+}
+nav .logo-container img {
+  height: 4.4rem;
+}
+nav .logo-container .nav-subtitle {
+  position: absolute;
+  bottom: 0.95rem;
+  right: 1.1rem;
+}

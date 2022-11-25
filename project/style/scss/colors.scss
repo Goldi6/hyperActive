@@ -1,0 +1,128 @@
+@use './variables.scss' as *;
+html * {
+    font-family: 'Assistant', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+//////////////////////////////
+///COLORS
+.logo-container {
+    color: $brown;
+    text-shadow: 0 0 1px rgba($color: #847171, $alpha: 1.0);
+}
+
+.nav-links-container {
+    @media screen and (min-width: $break-point__tablet) {
+        .inner-nav {
+            background-color: $blue;
+            font-weight: bold;
+            background: $blue-deep;
+            a {
+                color: $white;
+                font-weight: bold;
+            }
+        }
+    }
+    .inner-nav {
+        font-weight: 300;
+    }
+    a {
+        text-decoration: none;
+        color: $black;
+    }
+}
+
+.header,
+.banner,
+.sub-banner {
+    text-align: center;
+}
+
+.banner,
+.career-content>form {
+    background: $background_blue-gradient;
+    color: $white;
+}
+
+.sub-banner,
+.pro-card__white {
+    background: $green;
+}
+
+#questions-and-answers__section {
+    background: $yellow;
+}
+
+.question-answer {
+    .question {
+        color: $blue-text;
+    }
+    .answer a {
+        color: blue;
+    }
+}
+
+#career__section,
+#graduate__section {
+    background: $white;
+}
+
+.section {
+    background: $background-image;
+}
+
+footer {
+    background: $blue;
+    color: $white;
+}
+
+#how-it-works__section {
+    color: $white;
+    .category-block:first-of-type {
+        background-color: $blue-green;
+    }
+    .category-block:nth-of-type(2) {
+        background-color: $blue-light;
+    }
+    .category-block:nth-of-type(3) {
+        background: $blue;
+    }
+    .category-block:nth-of-type(4) {
+        background-color: $blue-strong;
+    }
+}
+
+#pros__section {
+    p:nth-of-type(3) {
+        color: blue;
+    }
+    .pro-card__black {
+        background: $black;
+        color: $white;
+        a {
+            color: $white;
+        }
+    }
+}
+
+.hamburger-btn div {
+    background-color: $blue-deep;
+}
+
+#how-it-works__section h3 {
+    color: $black;
+}
+
+form {
+    a {
+        color: $white;
+    }
+    button {
+        border: 3px solid $blue-light;
+        background-color: $btn-color;
+        outline: 2px solid $btn-color;
+    }
+}

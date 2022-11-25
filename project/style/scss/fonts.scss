@@ -1,0 +1,105 @@
+@use './variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Merriweather:wght@300&family=Roboto:wght@300&display=swap');
+.title--big {
+    font-size: $font-size_46;
+}
+
+.title--small {
+    font-size: $font-size_24;
+}
+
+.sub-banner,
+footer h2 {
+    font-size: $font-size_19;
+}
+
+.section {
+    font-size: $font-size_17;
+}
+
+#how-it-works__section {
+    .category-title {
+        font-size: $font-size_20;
+    }
+}
+
+.logo-container {
+    font-size: $font-size_9;
+    font-weight: 700;
+}
+
+#career__section {
+    font-size: $font-size_base;
+}
+
+form {
+    button {
+        font-size: $font-size_36;
+    }
+    label {
+        font-size: $font-size_14;
+    }
+    .privacy-container {
+        font-size: $font-size_12;
+    }
+    .form-block__agree {
+        label {
+            font-size: 13px !important;
+            font-weight: bold;
+            @media screen and (max-width: $break-point__tablet) {
+                font-size: $font-size_12_b !important;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+.banner {
+    span:first-of-type {
+        font-size: $font-size_90;
+        font-weight: 500;
+    }
+    span:last-of-type {
+        font-size: $font-size_120;
+        font-weight: 800;
+    }
+    @media screen and (max-width: $break-point__tablet) {
+        span:first-of-type {
+            font-size: $font-size_50;
+            font-weight: 600;
+        }
+        span:last-of-type {
+            font-size: $font-size_66;
+            font-weight: 800;
+        }
+        span {
+            line-height: 1em;
+        }
+    }
+    span {
+        line-height: 0.8em;
+    }
+    padding: 0.75rem;
+}
+
+.question {
+    font-weight: 500;
+}
+
+.nav-links-container {
+    font-size: $font-size_base;
+    @media screen and (max-width: $break-point__tablet) {
+        font-size: $font-size_20;
+        .inner-nav {
+            font-size: $font-size_19;
+        }
+    }
+}
+
+.career-content {
+    form {
+        h2 {
+            font-size: $font-size_24;
+        }
+    }
+}
