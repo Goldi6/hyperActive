@@ -560,3 +560,11 @@ form {
 html * {
     box-sizing: border-box;
 }
+
+input.error--red::placeholder {
+    color: red;
+}
+
+input::placeholder {
+    color: black;
+}

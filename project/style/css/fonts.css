@@ -1,109 +1,98 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Merriweather:wght@300&family=Roboto:wght@300&display=swap");
 .title--big {
-    font-size: 2.9rem;
-    padding-bottom: 2rem;
+  font-size: 2.9rem;
 }
 
 .title--small {
-    font-size: 1.5rem;
-    padding: 1rem 0;
+  font-size: 1.5rem;
 }
 
 .sub-banner,
 footer h2 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .section {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 #how-it-works__section .category-title {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 .logo-container {
-    font-size: 0.6rem;
-    font-weight: 700;
+  font-size: 0.6rem;
+  font-weight: 700;
 }
 
 #career__section {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 form button {
-    font-size: 2.25rem;
+  font-size: 2.25rem;
 }
-
 form label {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
-
 form .privacy-container {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
-
 form .form-block__agree label {
-    font-size: 13px !important;
-    font-weight: bold;
+  font-size: 13px !important;
+  font-weight: bold;
 }
-
 @media screen and (max-width: 925px) {
-    form .form-block__agree label {
-        font-size: 0.8rem !important;
-        font-weight: normal;
-    }
+  form .form-block__agree label {
+    font-size: 0.8rem !important;
+    font-weight: normal;
+  }
 }
 
 .banner {
-    padding: 0.75rem;
+  padding: 0.75rem;
 }
-
 .banner span:first-of-type {
-    font-size: 5.625rem;
-    font-weight: 500;
+  font-size: 5.625rem;
+  font-weight: 500;
 }
-
 .banner span:last-of-type {
-    font-size: 7.5rem;
-    font-weight: 800;
+  font-size: 7.5rem;
+  font-weight: 800;
 }
-
 @media screen and (max-width: 925px) {
-    .banner span:first-of-type {
-        font-size: 3.125rem;
-        font-weight: 600;
-    }
-    .banner span:last-of-type {
-        font-size: 3.75rem;
-        font-weight: 800;
-    }
-    .banner span {
-        line-height: 1em;
-    }
+  .banner span:first-of-type {
+    font-size: 3.125rem;
+    font-weight: 600;
+  }
+  .banner span:last-of-type {
+    font-size: 3.75rem;
+    font-weight: 800;
+  }
+  .banner span {
+    line-height: 1em;
+  }
 }
-
 .banner span {
-    line-height: 0.8em;
+  line-height: 0.8em;
 }
 
 .question {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .nav-links-container {
-    font-size: 16px;
+  font-size: 16px;
 }
-
 @media screen and (max-width: 925px) {
-    .nav-links-container {
-        font-size: 1.3rem;
-    }
-    .nav-links-container .inner-nav {
-        font-size: 1.2rem;
-    }
+  .nav-links-container {
+    font-size: 1.3rem;
+  }
+  .nav-links-container .inner-nav {
+    font-size: 1.2rem;
+  }
 }
 
 .career-content form h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }

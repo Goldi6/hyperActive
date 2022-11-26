@@ -15,17 +15,19 @@ for (let link of workQuestionLinks) {
 ///////////////////
 ////////////////////
 // FORM
+function closeModal(modal) {
+    modal.style.display = "none";
+}
+
 function openModal(modalId) {
     let modal = document.getElementById(modalId);
     modal.style.display = "flex";
+    modal.classList.add("open-popup-modal");
     let closeBtn = modal.getElementsByClassName("close-modal")[0];
-
-    function closeModal(modal) {
-        modal.style.display = "none";
-    }
 
     closeBtn.onclick = function() {
         closeModal(modal);
+        modal.classList.remove("open-popup-modal");
     };
 }
 
@@ -43,39 +45,58 @@ function testInputs(inputs) {
     for (let inp of inputs) {
         let type = inp.getAttribute("type");
         let regex;
-        if (type != "email") {
+        if (type == "email") {
             regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
             email = regex.test(inp.value);
-            console.log(inp);
-        }
-        if (type != "phone") {
-            regex = /\d{10}/;
-            phone = regex.test(inp.value);
+            if (!email) {
+                inp.classList.add("error--red");
 
-            console.log(inp);
+                inp.setAttribute("placeholder", "*נא להזין אימייל");
+            }
         }
-        if (type != "text") {
+        if (type == "phone") {
+            regex = /^0\d{9}$/;
+            phone = regex.test(inp.value);
+            if (!phone) {
+                inp.classList.add("error--red");
+
+                inp.setAttribute("placeholder", "*נא להזין מספר טלפון");
+            }
+        }
+        if (type == "text") {
             regex = /^\w+[\w ]*/;
             name = regex.test(inp.value);
+            if (!name) {
+                inp.classList.add("error--red");
 
-            console.log(inp);
+                inp.setAttribute("placeholder", "*נא להזין שם תקין");
+            }
         }
     }
     return [name, phone, email].every((bool) => bool);
     s;
 }
 const forms = document.getElementsByTagName("form");
+
 for (let form of forms) {
-    form.onsubmit = function(e) {
+    let inputs = form.getElementsByTagName("input");
+    for (let inp of inputs) {
+        inp.onchange = function(e) {
+            e.target.classList.remove("error--red");
+        };
+    }
+    form.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        const inputs = form.getElementsByTagName("input");
-        testInputs(inputs);
+        const inputs = e.target.getElementsByTagName("input");
+        let verified = testInputs(inputs);
+        if (verified) {
+            let popModal = document.getElementById("modal--form-popup");
+            popModal.style.display = "none";
+            openModal("modal--submitted");
+        }
+    });
 
-        let popModal = document.getElementById("modal--form-popup");
-        popModal.style.display = "none";
-        openModal("modal--submitted");
-    };
     const privacyModal_links = form.getElementsByTagName("a");
     for (let link of privacyModal_links) {
         link.onclick = function(e) {
@@ -85,10 +106,24 @@ for (let form of forms) {
         };
     }
 }
-window.addEventListener("load", function() {
-    openModal("modal--form-popup");
-});
-setInterval(openModal("modal--form-popup"), 900000);
+window.addEventListener("load", openPopupModal);
+window.addEventListener("resize", closeOrOpenPopupModal);
+setInterval(openPopupModal, 900000);
 
+function openPopupModal() {
+    let windowWidth = window.innerWidth;
+    if (windowWidth > 925) openModal("modal--form-popup");
+}
+
+function closeOrOpenPopupModal() {
+    let windowWidth = window.innerWidth;
+    let modal = document.getElementById("modal--form-popup");
+    if (windowWidth < 925) {
+        closeModal(modal);
+    } else {
+        if (modal.classList.contains("open-popup-modal"))
+            openModal("modal--form-popup");
+    }
+}
 // // applyClickToOpenModal(forms, "submit", "modal--submit");
 // // applyClickToOpenModal(forms, "click");
