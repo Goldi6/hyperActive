@@ -38,7 +38,7 @@ html {
 
 .banner,
 .career-content > form {
-  background: linear-gradient(155deg, #154b9c, #213b7f) !important;
+  background: linear-gradient(155deg, #154b9c, #213b7f);
   color: #fff;
 }
 
@@ -111,7 +111,7 @@ form a {
   color: #fff;
 }
 form button {
-  border: 3px solid #39a4dc;
+  border: 2px solid #39a4dc;
   background-color: #fff6df;
   outline: 2px solid #fff6df;
 }

@@ -39,12 +39,12 @@ form .privacy-container {
   font-size: 0.75rem;
 }
 form .form-block__agree label {
-  font-size: 13px !important;
+  font-size: 13px;
   font-weight: bold;
 }
 @media screen and (max-width: 925px) {
   form .form-block__agree label {
-    font-size: 0.8rem !important;
+    font-size: 0.8rem;
     font-weight: normal;
   }
 }
@@ -54,7 +54,7 @@ form .form-block__agree label {
 }
 .banner span:first-of-type {
   font-size: 5.625rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .banner span:last-of-type {
   font-size: 7.5rem;
@@ -95,4 +95,23 @@ form .form-block__agree label {
 
 .career-content form h2 {
   font-size: 1.5rem;
+}
+
+#pros__section .header {
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#how-it-works__section .header {
+  padding-bottom: 2rem;
+}
+
+#questions-and-answers__section .header,
+#public-question__section .header {
+  padding-bottom: 4rem;
+}
+#questions-and-answers__section .questions-and-answers__container,
+#public-question__section .questions-and-answers__container {
+  max-width: 926px;
+  margin: auto;
 }

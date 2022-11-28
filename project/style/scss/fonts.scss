@@ -44,10 +44,10 @@ form {
     }
     .form-block__agree {
         label {
-            font-size: 13px !important;
+            font-size: 13px;
             font-weight: bold;
             @media screen and (max-width: $break-point__tablet) {
-                font-size: $font-size_12_b !important;
+                font-size: $font-size_12_b;
                 font-weight: normal;
             }
         }
@@ -57,7 +57,7 @@ form {
 .banner {
     span:first-of-type {
         font-size: $font-size_90;
-        font-weight: 500;
+        font-weight: 600;
     }
     span:last-of-type {
         font-size: $font-size_120;
@@ -101,5 +101,29 @@ form {
         h2 {
             font-size: $font-size_24;
         }
+    }
+}
+
+#pros__section {
+    .header {
+        padding-top: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+#how-it-works__section {
+    .header {
+        padding-bottom: 2rem;
+    }
+}
+
+#questions-and-answers__section,
+#public-question__section {
+    .header {
+        padding-bottom: 4rem;
+    }
+    .questions-and-answers__container {
+        max-width: 926px;
+        margin: auto;
     }
 }

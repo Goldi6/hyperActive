@@ -96,6 +96,11 @@
   font-size: 0.9rem;
 }
 
+#modal--form-popup {
+  display: flex;
+  top: -100vh;
+  transition: top 1s ease;
+}
 @media screen and (max-width: 925px) {
   #modal--form-popup {
     display: none;
@@ -128,7 +133,7 @@
   font-weight: 800;
   margin: 4rem 2rem 1.5rem 3.5rem;
 }
-#modal--form-popup .modal-content img.close-modal {
+#modal--form-popup .modal-content img.close-modal__btn {
   height: 2rem;
   position: absolute;
   top: 1rem;
@@ -177,4 +182,8 @@
   color: white;
   font-size: 1.3rem;
   font-weight: 500;
+}
+
+#modal--form-popup.shown--modal {
+  top: 0;
 }

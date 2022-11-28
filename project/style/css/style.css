@@ -17,8 +17,14 @@
   height: 1rem;
 }
 
+html * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 p {
-  margin: 1em !important;
+  margin: 1em 0;
 }
 
 .firms-container {
@@ -26,7 +32,7 @@ p {
 }
 
 .firm-logo {
-  width: 6rem;
+  width: 5.5rem;
   margin: 22px;
 }
 
@@ -38,17 +44,11 @@ p {
   padding: 0.5rem;
 }
 
-html * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .section-content {
   margin: auto;
   max-width: 100%;
   width: 1204px;
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  padding: 0 3rem 1.5rem 3rem;
 }
 
 .section-content * {
@@ -131,7 +131,7 @@ html * {
     display: none;
   }
   #how-it-works__section svg {
-    display: block !important;
+    display: block;
     width: 0.75rem;
     aspect-ratio: 1;
     transition: transform 0.5s linear;
@@ -164,27 +164,31 @@ ol {
   padding: 2rem 1rem;
   transition: transform 0.5s linear, box-shadow 0.5s;
 }
-#pros__section .pro-card:hover {
-  box-shadow: 0 0 50px -7px rgba(0, 0, 0, 0.8);
-  transform: scale(110%);
-}
-
-.questions-and-answers__block:first-of-type {
-  padding-right: 4rem;
-}
-
-.questions-and-answers__block:last-of-type {
-  padding-left: 4rem;
-}
-
-@media screen and (max-width: 450px) {
-  #career__section .section-content {
-    padding: 0 !important;
+@media screen and (min-width: 925px) {
+  #pros__section .pro-card:hover {
+    box-shadow: 0 0 50px -7px rgba(0, 0, 0, 0.8);
+    transform: scale(110%);
   }
 }
+
+#career__section {
+  box-shadow: inset 0 -10px 40px rgba(0, 0, 0, 0.2);
+  padding-bottom: 3rem;
+}
+@media screen and (max-width: 925px) {
+  #career__section {
+    box-shadow: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  #career__section .section-content {
+    padding: 0;
+  }
+}
+
 .career-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 0.9fr;
 }
 .career-content form {
   margin-top: 6.75rem;
@@ -192,11 +196,64 @@ ol {
   place-items: center;
 }
 .career-content .form-content {
+  box-sizing: border-box;
   width: 17rem;
-  margin: 1.5rem;
+  margin: 2rem;
+  margin-top: 0;
 }
 .career-content h1 {
   padding: 1.5rem 0;
+}
+.career-content .courses-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  width: 36rem;
+}
+.career-content .courses-container .course-container {
+  text-decoration: none;
+  color: #000;
+  height: 10rem;
+  flex-direction: column;
+}
+.career-content .courses-container .course-container .course-name {
+  word-wrap: normal;
+  text-align: center;
+  line-height: 1rem;
+}
+.career-content .courses-container .course-container .arrow-container {
+  display: none;
+}
+.career-content .courses-container .course-separetor {
+  width: 2.5rem;
+  height: 4px;
+  margin: 0.3em;
+  border-radius: 4px;
+  background-color: black;
+}
+.career-content .courses-container #cyber-data .course-separetor {
+  background: #81D7B4;
+}
+.career-content .courses-container #net-securety-data-cloud-manegment .course-separetor {
+  background: #A3B6CC;
+}
+.career-content .courses-container #digital-marketing .course-separetor {
+  background: #3A5998;
+}
+.career-content .courses-container #QA .course-separetor {
+  background: #316CFF;
+}
+.career-content .courses-container #grhapic-ui-ux .course-separetor {
+  background: #F9CF58;
+}
+.career-content .courses-container #mobile-dev .course-separetor {
+  background: #8E8E93;
+}
+.career-content .courses-container #server-linux-manegment .course-separetor {
+  background-color: #475F8E;
+}
+.career-content .course-container:hover {
+  opacity: 0.8;
 }
 @media screen and (max-width: 925px) {
   .career-content {
@@ -234,7 +291,7 @@ ol {
     gap: 0.25rem;
   }
   .career-content .course-explanation-block .courses-container .course-container {
-    width: 100% !important;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -245,7 +302,7 @@ ol {
     text-align: right;
   }
   .career-content .course-explanation-block .courses-container .arrow-container {
-    display: block !important;
+    display: block;
   }
   .career-content .course-explanation-block .courses-container .arrow-container svg {
     height: 0.75rem;
@@ -261,56 +318,6 @@ ol {
   .career-content .course-explanation-block .course-container:nth-of-type(3) * {
     margin-right: 0 !important;
   }
-}
-.career-content .courses-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr;
-  width: 36rem;
-}
-.career-content .courses-container .course-container {
-  text-decoration: none;
-  color: #000;
-  height: 10rem;
-  flex-direction: column;
-}
-.career-content .courses-container .course-container .course-name {
-  word-wrap: normal;
-  text-align: center;
-}
-.career-content .courses-container .course-container .arrow-container {
-  display: none;
-}
-.career-content .courses-container .course-separetor {
-  width: 2.5rem;
-  height: 4px;
-  margin: 0.3em;
-  border-radius: 4px;
-  background-color: black;
-}
-.career-content .courses-container #cyber-data .course-separetor {
-  background: #81D7B4;
-}
-.career-content .courses-container #net-securety-data-cloud-manegment .course-separetor {
-  background: #A3B6CC;
-}
-.career-content .courses-container #digital-marketing .course-separetor {
-  background: #3A5998;
-}
-.career-content .courses-container #QA .course-separetor {
-  background: #316CFF;
-}
-.career-content .courses-container #grhapic-ui-ux .course-separetor {
-  background: #F9CF58;
-}
-.career-content .courses-container #mobile-dev .course-separetor {
-  background: #8E8E93;
-}
-.career-content .courses-container #server-linux-manegment .course-separetor {
-  background-color: #475F8E;
-}
-.career-content .course-container:hover {
-  opacity: 0.8;
 }
 
 footer {
@@ -333,9 +340,8 @@ footer .form-block {
 }
 @media screen and (max-width: 925px) {
   footer .form-block {
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
-    padding: 0 4rem;
   }
 }
 footer .form-inputs {
@@ -346,23 +352,22 @@ footer .form-inputs {
 }
 @media screen and (max-width: 925px) {
   footer .form-inputs {
-    width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3.1fr);
     gap: 3rem;
   }
   footer .form-inputs .form-input {
-    width: 100% !important;
+    width: 100%;
   }
 }
-footer .form-block__agree {
+footer form .form-block__agree {
   font-weight: bold;
-  align-items: center !important;
-  justify-content: center !important;
+  align-items: center;
+  justify-content: center;
   gap: 0.5em;
 }
 @media screen and (max-width: 925px) {
-  footer .form-block__agree {
+  footer form .form-block__agree {
     flex-direction: row;
   }
 }
@@ -374,12 +379,15 @@ footer .form-block__agree {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-  padding: 2rem 0;
+  padding: 2rem 0.5rem;
 }
 .career-content form .form-block__agree input {
   position: relative;
   right: -1rem;
   top: -0.5em;
+}
+.career-content form #submit-career {
+  width: 100%;
 }
 
 form .privacy-container {
@@ -389,17 +397,22 @@ form .privacy-container {
   gap: 1em;
   align-items: center;
 }
-form button {
-  width: fit-content;
-  padding: 0.15em 1.75em;
+form button#submit-career,
+form #submit-footer {
+  display: block;
+  text-align: center;
   font-weight: 600;
   white-space: nowrap;
+}
+form #submit-footer {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 form * {
   border-radius: 1px;
 }
 form .form-input {
-  height: 4rem;
+  height: 3.8rem;
   width: auto;
   min-width: 13rem;
   background-color: #fff;
@@ -423,6 +436,7 @@ form .form-input input:focus {
 }
 form .form-input label {
   padding: 0.4em 0.5em;
+  white-space: nowrap;
 }
 form .form-input .input-separator {
   width: 100%;
@@ -473,10 +487,11 @@ form .form-block__agree {
   background: #06f;
   border: 2px solid #25d366;
   border-radius: 15px;
-  padding: 0 0.25em;
+  padding: 0.15rem 0.25em;
   margin-right: 0.7em;
-  box-shadow: 0 0 -5px 10px #000;
+  box-shadow: 0 0 -5px rgba(0, 0, 0, 0.5);
   width: fit-content;
+  font-weight: 600;
 }
 .sticky-contact .sticky-contact__screen a img {
   filter: invert(100%);
@@ -517,9 +532,13 @@ form .form-block__agree {
   padding-bottom: 4rem;
 }
 
+#about-us__section {
+  padding-top: 5rem;
+}
+
 #questions-and-answers__section,
 #public-question__section {
-  padding-bottom: 0 !important;
+  padding-bottom: 0;
 }
 @media screen and (max-width: 925px) {
   #questions-and-answers__section .section-content,
@@ -529,7 +548,7 @@ form .form-block__agree {
 }
 #questions-and-answers__section .questions-and-answers__block .question-answer .question,
 #public-question__section .questions-and-answers__block .question-answer .question {
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 600;
   height: 6.5rem;
   border-top: 1px solid #dbdbdb;
@@ -549,7 +568,7 @@ form .form-block__agree {
 @media screen and (max-width: 925px) {
   #questions-and-answers__section .questions-and-answers__block,
   #public-question__section .questions-and-answers__block {
-    padding: 0 !important;
+    padding: 0;
   }
 }
 @media screen and (max-width: 925px) {
