@@ -57,7 +57,7 @@
     }
 }
 
-#modal--accesability,
+#modal--accessability,
 #modal--privacy {
     display: none;
     .modal-content {
@@ -93,6 +93,9 @@
     display: flex;
     top: -100vh;
     transition: top 1s ease;
+    &.shown--modal {
+        top: 0;
+    }
     @media screen and (max-width: $break-point__tablet) {
         display: none;
     }
@@ -173,8 +176,4 @@
             }
         }
     }
-}
-
-#modal--form-popup.shown--modal {
-    top: 0;
 }

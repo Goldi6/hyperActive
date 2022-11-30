@@ -1,3 +1,3 @@
-main_setupPopupModal();
-main_setupQuestionLinks();
-main_setupForm();
+setupPopupModal();
+setupQuestionLinks();
+setupForm();

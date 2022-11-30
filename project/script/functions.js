@@ -1,13 +1,13 @@
-function main_setupQuestionLinks() {
+function setupQuestionLinks() {
     function openWorkQuestion() {
-        const workQwst = document.getElementById("work-promise-question");
-        const checkbox = workQwst.getElementsByTagName("input")[0];
+        const workQuestion = document.getElementById("work-promise-question");
+        const checkbox = workQuestion.querySelector("input");
         checkbox.checked = true;
     }
     const blockWithWorkQuestionLink =
         document.getElementsByClassName("pro-card__black")[0];
     const workQuestionLinks = blockWithWorkQuestionLink.getElementsByTagName("a");
-    for (let link of workQuestionLinks) {
+    for (const link of workQuestionLinks) {
         link.onclick = openWorkQuestion;
     }
 }
@@ -22,7 +22,7 @@ function setupPrivacyLinks(privacyModalLinks) {
         link.onclick = function(e) {
             e.preventDefault();
             let modalId = e.target.getAttribute("name");
-            MODAL_funcs.openModal(modalId);
+            Modal.openModal(modalId);
         };
     }
 }
@@ -31,23 +31,21 @@ function setupPrivacyLinks(privacyModalLinks) {
 
 ////////////////
 
-function main_setupForm() {
-    const MODAL = MODAL_funcs;
-    const INPUTS = INPUT_verify;
+function setupForm() {
     const forms = document.getElementsByTagName("form");
 
     for (let form of forms) {
         let inputs = form.getElementsByTagName("input");
-        INPUTS.removeErrorClassFromInputs(inputs);
+        removeErrorClassFromInputs(inputs);
 
         form.addEventListener("submit", function(e) {
             e.preventDefault();
 
             const inputs = e.target.getElementsByTagName("input");
-            let verified = INPUTS.verifyInputs(inputs);
+            let verified = verifyInputs(inputs);
             if (verified) {
-                MODAL.closePopupModal();
-                MODAL.openModal("modal--submitted");
+                Modal.closePopupModal();
+                Modal.openModal("modal--submitted");
             }
         });
 
@@ -56,11 +54,8 @@ function main_setupForm() {
     }
 }
 
-function main_setupPopupModal() {
-    window.addEventListener("load", MODAL_funcs.openPopupModal_byWidth);
-    window.addEventListener(
-        "resize",
-        MODAL_funcs.closeOrOpenPopupModal_ByScreenWidth
-    );
-    setInterval(MODAL_funcs.openPopupModal_byWidth, 900000);
+function setupPopupModal() {
+    window.addEventListener("load", Modal.openPopupModal_byWidth);
+    window.addEventListener("resize", Modal.closeOrOpenPopupModal_ByScreenWidth);
+    setInterval(Modal.openPopupModal_byWidth, 900000);
 }

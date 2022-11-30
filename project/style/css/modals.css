@@ -60,11 +60,11 @@
   }
 }
 
-#modal--accesability,
+#modal--accessability,
 #modal--privacy {
   display: none;
 }
-#modal--accesability .modal-content,
+#modal--accessability .modal-content,
 #modal--privacy .modal-content {
   margin-right: 1rem;
   flex-shrink: 1;
@@ -73,25 +73,25 @@
   overflow-y: scroll;
   padding: 1rem 0.5rem 4rem 0.5rem;
 }
-#modal--accesability .modal-content img,
+#modal--accessability .modal-content img,
 #modal--privacy .modal-content img {
   margin-right: 0.5rem;
   height: 1rem;
   display: block;
 }
-#modal--accesability .modal-content h3,
+#modal--accessability .modal-content h3,
 #modal--privacy .modal-content h3 {
   font-size: 2rem;
   color: #213a7f;
   text-align: center;
   padding: 1rem;
 }
-#modal--accesability .modal-content h6,
+#modal--accessability .modal-content h6,
 #modal--privacy .modal-content h6 {
   font-size: 1.2rem;
   color: #213a7f;
 }
-#modal--accesability .modal-content div.modal__text,
+#modal--accessability .modal-content div.modal__text,
 #modal--privacy .modal-content div.modal__text {
   font-size: 0.9rem;
 }
@@ -100,6 +100,9 @@
   display: flex;
   top: -100vh;
   transition: top 1s ease;
+}
+#modal--form-popup.shown--modal {
+  top: 0;
 }
 @media screen and (max-width: 925px) {
   #modal--form-popup {
@@ -182,8 +185,4 @@
   color: white;
   font-size: 1.3rem;
   font-weight: 500;
-}
-
-#modal--form-popup.shown--modal {
-  top: 0;
 }
